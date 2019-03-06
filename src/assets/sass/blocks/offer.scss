@@ -4,3 +4,123 @@
 		padding: 40px 0 0;
 	}
 }
+
+.offer__content {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 20px;
+	@media screen and (max-width: $xl) {
+		position: relative;
+		flex-direction: column;
+		align-items: flex-end;
+		padding-top: 64px;
+	}
+	@media screen and (max-width: $md) {
+		align-items: center;
+		padding-bottom: 327px;
+	}
+}
+.offer__item {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 242px;
+	text-align: center;
+	@media screen and (max-width: $xl) {
+		margin-bottom: 40px;
+		text-align: left;
+	}
+	@media screen and (max-width: $md) {
+		margin-bottom: 30px;
+		text-align: center;
+	}
+}
+
+
+.offer__img {
+	position: relative;
+	@media screen and (max-width: $xl) {
+		display: none;
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 60px;
+		background: $smoky-white;
+		z-index: 10;
+	}
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: 54px;
+		left: 0;
+		width: 100%;
+		height: 17px;
+		background: url('../i/offer-img-shaddow.png') no-repeat center;
+		// background-size: cover;
+		z-index: 12;
+	}
+}
+
+.offer__img--show-tablet {
+	@media screen and (max-width: $xl) {
+		position: absolute;
+		top: 14px;
+		left: 0;
+		display: block;
+		width: 268px;
+		height: auto;
+	}
+	@media screen and (max-width: $md) {
+		top: 480px;
+		left: 32px;
+		width: 158px;
+	}
+	&::after {
+		@media screen and (max-width: $xl) {
+			height: 74px;
+		}
+		@media screen and (max-width: $md) {
+			width: 186px;
+		}
+	}
+	&::before {
+		@media screen and (max-width: $xl) {
+			display: none;
+		}
+	}
+	img {
+		@media screen and (max-width: $xl) {
+			max-width: none;
+			width: 268px;
+		}
+		@media screen and (max-width: $md) {
+			max-width: auto;
+			width: auto;
+		}
+	}
+}
+
+.offer__title {
+	margin-bottom: 26px;
+	font-size: 30px;
+	line-height: 1;
+	color: $black;
+	@media screen and (max-width: $xl) {
+		margin-bottom: 14px;
+		font-size: 18px;
+	}
+}
+
+.offer__text {
+	font-family: 'Miryad', sans-serif;
+	line-height: 30px;
+	color: $main-color;
+	@media screen and (max-width: $xl) {
+		font-size: 14px;
+		line-height: 24px;
+	}
+}
