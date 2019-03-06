@@ -1,0 +1,51 @@
+@import 'partials/fonts'
+@import 'partials/variables'
+@import 'partials/mixins'
+// @import '../libs/slick/slick/slick.css'
+// @import '../libs/plyr/dist/plyr.css'
+// @import '../../../build/assets/i/svg/bg/css/sprite.css'
+
+body
+	margin 0
+	padding 0
+	open-sans()
+	font-size 14px
+	color text-color
+	background bg-color
+
+*
+	box-sizing border-box
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+	margin 0
+	padding 0
+
+img
+	max-width 100%
+	height auto
+
+.hidden
+	display none
+
+.container
+	margin 0 auto
+	padding: 0 120px
+	max-width 1200px
+	outline 1px solid red
+
+	@media screen and (max-width: md) {
+		padding 0
+		width 768px
+	}
+
+p
+	margin 0
+	padding 0
+
+ul
+	reset-list()
