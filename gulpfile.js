@@ -2,7 +2,8 @@
 
 let gulp = require('gulp'),
   //css
-  stylus = require('gulp-stylus'),
+  // stylus = require('gulp-stylus'),
+  sass = require('gulp-sass'),
   stylint = require('gulp-stylint'),
   autoprefixer = require("gulp-autoprefixer"),
   sourcemaps = require('gulp-sourcemaps'),
@@ -113,17 +114,41 @@ gulp.task('pug', function () {
 
 //=======================
 
+// gulp.task("css", function () {
+//   return gulp.src('src/assets/stylus/style.styl')
+//     .pipe(gp.plumber())
+//     .pipe(gp.sourcemaps.init())
+//     // .pipe(gp.wait(500))
+//     .pipe(stylint({config: '.stylintrc'}))
+//     .pipe(gp.debug({title: "stylus"}))
+// 		.pipe(stylint.reporter())
+//     .pipe(stylus({
+// 			'include css': true
+// 		}))
+//     .pipe(gp.autoprefixer({
+//       cascade: false
+//     }))
+//     .pipe(gulp.dest('build/assets/css/'))
+//     .pipe(gp.csso())
+//     .pipe(gp.rename("style.min.css"))
+//     .pipe(gp.sourcemaps.write('.'))
+//     .pipe(gulp.dest('build/assets/css/'))
+//     .pipe(browserSync.reload({
+//       stream: true
+//     }));
+//   // .pipe(gp.notify("Change css"));
+// });
+
 gulp.task("css", function () {
-  return gulp.src('src/assets/stylus/style.styl')
+  return gulp.src('src/assets/sass/style.scss')
     .pipe(gp.plumber())
     .pipe(gp.sourcemaps.init())
-    // .pipe(gp.wait(500))
-    .pipe(stylint({config: '.stylintrc'}))
-    .pipe(gp.debug({title: "stylus"}))
-		.pipe(stylint.reporter())
-    .pipe(stylus({
-			'include css': true
-		}))
+    .pipe(gp.wait(500))
+    .pipe(sass({
+      outputStyle: 'expanded'
+    }).on('error', notify.onError(function (error) {
+      return 'An error occurred while compiling sass.\nLook in the console for details.\n' + error;
+    })))
     .pipe(gp.autoprefixer({
       cascade: false
     }))
