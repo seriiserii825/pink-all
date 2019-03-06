@@ -4,7 +4,6 @@ let gulp = require('gulp'),
   //css
   // stylus = require('gulp-stylus'),
   sass = require('gulp-sass'),
-  stylint = require('gulp-stylint'),
   autoprefixer = require("gulp-autoprefixer"),
   sourcemaps = require('gulp-sourcemaps'),
   wait = require('gulp-wait'),
@@ -112,32 +111,6 @@ gulp.task('pug', function () {
   // .pipe(gp.notify("Change html"));
 });
 
-//=======================
-
-// gulp.task("css", function () {
-//   return gulp.src('src/assets/stylus/style.styl')
-//     .pipe(gp.plumber())
-//     .pipe(gp.sourcemaps.init())
-//     // .pipe(gp.wait(500))
-//     .pipe(stylint({config: '.stylintrc'}))
-//     .pipe(gp.debug({title: "stylus"}))
-// 		.pipe(stylint.reporter())
-//     .pipe(stylus({
-// 			'include css': true
-// 		}))
-//     .pipe(gp.autoprefixer({
-//       cascade: false
-//     }))
-//     .pipe(gulp.dest('build/assets/css/'))
-//     .pipe(gp.csso())
-//     .pipe(gp.rename("style.min.css"))
-//     .pipe(gp.sourcemaps.write('.'))
-//     .pipe(gulp.dest('build/assets/css/'))
-//     .pipe(browserSync.reload({
-//       stream: true
-//     }));
-//   // .pipe(gp.notify("Change css"));
-// });
 
 gulp.task("css", function () {
   return gulp.src('src/assets/sass/style.scss')
@@ -260,7 +233,7 @@ gulp.task("clean", function (cb) {
 });
 
 gulp.task("watch", function () {
-  gulp.watch('src/assets/stylus/**/*.styl', gulp.series('css'));
+  gulp.watch('src/assets/sass/**/*.scss', gulp.series('css'));
   gulp.watch('src/pug/**/*.pug', gulp.series('pug'));
   gulp.watch('src/assets/js/main.js', gulp.series('js'));
   gulp.watch('src/assets/js/**/*.js', gulp.series('alljs'));

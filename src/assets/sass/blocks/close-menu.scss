@@ -1,23 +1,25 @@
-.close-menu
-	position absolute
-	margin 0
-	padding 0
-	display none
-	width 26px
-	height 26px
-	border none
-	background none
-	span
-		position absolute
-		top 50%
-		left 0
-		transform translateY(-50%)
-		display block
-		width 30px
-		height 6px
-		transform rotate(45deg)
-		background white
+.close-menu {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	display: none;
+	width: 26px;
+	height: 26px;
+	border: none;
+	background: none;
+}
 
-		&:last-child
-			transform rotate(-45deg)
+.close-menu span {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%) rotate(45deg);
+	display: block;
+	width: 30px;
+	height: 6px;
+	background: #fff;
+}
 
+.close-menu span:last-child {
+	transform: rotate(-45deg);
+}

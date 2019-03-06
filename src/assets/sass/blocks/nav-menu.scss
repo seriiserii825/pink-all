@@ -1,63 +1,96 @@
-.nav-menu
-	position absolute
-	top 0
-	left 0
-	width 100%
-	height 110px
-	background rgba(0,0,0,.3)
-	z-index 1000
-	@media screen and (max-width: md) {
-		height 66px
-	}
-	&.nav-menu--show
-		background main-color
-		.container
-			position relative
-			height 100%
-		.nav-menu__show-menu
-			display none
-		.nav-menu__close-menu
-			position absolute
-			top 45px
-			right 0
-			display block
-			@media screen and (max-width: md) {
-				top 21px
-			}
-		.nav-menu__logo
-			left 0
+.nav-menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 110px;
+	background: rgba(0,0,0,0.3);
+	z-index: 1000;
+}
 
-.nav-menu__wrapper
-	display flex
-	justify-content space-between
-	align-items center
-	width 100%
-	height 110px
-	@media screen and (max-width: md) {
-		height 66px
+@media screen and (max-width: md) {
+	.nav-menu {
+		height: 66px;
 	}
+}
 
-.nav-menu__show-menu
-	position absolute
-	top 44px
-	right 20px
-	@media screen and (max-width: md) {
-		top 21px
-	}
+.nav-menu.nav-menu--show {
+	background: main-color;
+}
 
-.nav-menu__close-menu
-	display none
+.nav-menu.nav-menu--show .container {
+	position: relative;
+	height: 100%;
+}
 
-.nav-menu__logo
-	width 147px
-	height 40px
-	@media screen and (max-width: xl) {
-		position absolute
-		top 27px
-		left 20px
+.nav-menu.nav-menu--show .nav-menu__show-menu {
+	display: none;
+}
+
+.nav-menu.nav-menu--show .nav-menu__close-menu {
+	position: absolute;
+	top: 45px;
+	right: 0;
+	display: block;
+}
+
+@media screen and (max-width: md) {
+	.nav-menu.nav-menu--show .nav-menu__close-menu {
+		top: 21px;
 	}
-	@media screen and (max-width: md) {
-		top 22px
-		width 75px
-		height 22px
+}
+
+.nav-menu.nav-menu--show .nav-menu__logo {
+	left: 0;
+}
+
+.nav-menu__wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 110px;
+}
+
+@media screen and (max-width: md) {
+	.nav-menu__wrapper {
+		height: 66px;
 	}
+}
+
+.nav-menu__show-menu {
+	position: absolute;
+	top: 44px;
+	right: 20px;
+}
+
+@media screen and (max-width: md) {
+	.nav-menu__show-menu {
+		top: 21px;
+	}
+}
+
+.nav-menu__close-menu {
+	display: none;
+}
+
+.nav-menu__logo {
+	width: 147px;
+	height: 40px;
+}
+
+@media screen and (max-width: xl) {
+	.nav-menu__logo {
+		position: absolute;
+		top: 27px;
+		left: 20px;
+	}
+}
+
+@media screen and (max-width: md) {
+	.nav-menu__logo {
+		top: 22px;
+		width: 75px;
+		height: 22px;
+	}
+}
