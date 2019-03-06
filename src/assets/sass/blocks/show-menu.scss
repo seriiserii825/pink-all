@@ -6,7 +6,7 @@
 	border: none;
 }
 
-@media screen and (max-width: xl) {
+@media screen and (max-width: $xl) {
 	.show-menu {
 		display: block;
 	}

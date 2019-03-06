@@ -3,7 +3,7 @@
 	justify-content: space-between;
 }
 
-@media screen and (max-width: xl) {
+@media screen and (max-width: $xl) {
 	.nav-list {
 		display: none;
 	}
@@ -17,7 +17,7 @@
 	margin-right: 0;
 }
 
-@media screen and (max-width: xl) {
+@media screen and (max-width: $xl) {
 	.nav-list--show {
 		position: absolute;
 		top: 109px;
@@ -27,7 +27,7 @@
 	}
 }
 
-@media screen and (max-width: xl) {
+@media screen and (max-width: $xl) {
 	.nav-list--show .nav-list__item {
 		display: block;
 		margin-right: 0;
@@ -35,12 +35,12 @@
 		line-height: 63px;
 		text-align: center;
 		text-transform: uppercase;
-		background: main-color;
+		background: $main-color;
 		box-shadow: 0 1px 0 #000, inset 0 1px 0 rgba(255,255,255,0.15);
 	}
 }
 
-@media screen and (max-width: xl) and (max-width: md) {
+@media screen and (max-width: $xl) and (max-width: $md) {
 	.nav-list--show {
 		top: 66px;
 	}

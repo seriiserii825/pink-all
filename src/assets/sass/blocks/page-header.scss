@@ -4,13 +4,13 @@
 	background: url("../i/page-header-bg.jpg") no-repeat center;
 }
 
-@media screen and (max-width: xl) {
+@media screen and (max-width: $xl) {
 	.page-header {
 		min-height: 729px;
 	}
 }
 
-@media screen and (max-width: md) {
+@media screen and (max-width: $md) {
 	.page-header {
 		min-height: 472px;
 	}
@@ -38,7 +38,7 @@
 	z-index: 80;
 }
 
-@media screen and (max-width: xl) {
+@media screen and (max-width: $xl) {
 	.page-header__content {
 		height: 404px;
 		left: 14px;
@@ -46,14 +46,14 @@
 	}
 }
 
-@media screen and (max-width: md) {
+@media screen and (max-width: $md) {
 	.page-header__content {
 		top: 472px;
 		left: 0;
 		padding: 28px 0;
 		width: 321px;
 		height: 272px;
-		background: dark-blue;
+		background: $dark-blue;
 	}
 }
 
@@ -65,13 +65,13 @@
 	text-align: center;
 }
 
-@media screen and (max-width: xl) {
+@media screen and (max-width: $xl) {
 	.page-header__title {
 		font-size: 40px;
 	}
 }
 
-@media screen and (max-width: md) {
+@media screen and (max-width: $md) {
 	.page-header__title {
 		display: none;
 	}
@@ -88,7 +88,7 @@
 	background: none;
 }
 
-@media screen and (max-width: md) {
+@media screen and (max-width: $md) {
 	.page-header__button {
 		width: 284px;
 	}
@@ -113,7 +113,7 @@
 	text-align: center;
 }
 
-@media screen and (max-width: md) {
+@media screen and (max-width: $md) {
 	.page-header__text {
 		width: 238px;
 		font-size: 14px;
@@ -128,7 +128,7 @@
 	height: 210px;
 }
 
-@media screen and (max-width: xl) {
+@media screen and (max-width: $xl) {
 	.page-header__image {
 		bottom: -7px;
 		right: 18px;
@@ -138,7 +138,7 @@
 	}
 }
 
-@media screen and (max-width: md) {
+@media screen and (max-width: $md) {
 	.page-header__image {
 		bottom: 3px;
 		width: 256px;

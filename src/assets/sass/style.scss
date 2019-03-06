@@ -1,0 +1,86 @@
+@import 'partials/fonts';
+@import 'partials/variables';
+@import 'partials/mixins';
+// @import '../libs/slick/slick/slick.css'
+// @import '../libs/plyr/dist/plyr.css'
+// @import '../../../build/assets/i/svg/bg/css/sprite.css'
+
+body {
+	margin: 0;
+	padding: 0;
+	padding-bottom: 700px;
+	@include open-sans;
+	font-size: 18px;
+	color: $text-color;
+	background: $bg-color;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+ul {
+	@include reset-list;
+}
+
+.hidden {
+	display: none;
+}
+
+.container-big {
+	margin: 0 auto;
+	width: 1200px;
+	outline: 1px solid #008000;
+}
+
+@media screen and (max-width: $xl) {
+	.container-big {
+		width: 660px;
+	}
+}
+
+@media screen and (max-width: $md) {
+	.container-big {
+		width: 320px;
+	}
+}
+
+.container {
+	margin: 0 auto;
+	width: 960px;
+	outline: 1px solid #f00;
+}
+
+@media screen and (max-width: $xl) {
+	.container {
+		padding: 0 20px;
+		width: 620px;
+	}
+}
+
+@media screen and (max-width: $md) {
+	.container {
+		width: 280px;
+	}
+}
+
+@import 'blocks/page-header';
+@import 'blocks/nav-menu';
+@import 'blocks/nav-list';
+@import 'blocks/close-menu';
+@import 'blocks/show-menu';
