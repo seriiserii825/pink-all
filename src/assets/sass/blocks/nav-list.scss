@@ -11,10 +11,28 @@
 
 .nav-list__item {
 	margin-right: 82px;
+	padding: 9px 0;
+	color: white;
+	transition: all .4s ease;
+	&:hover {
+		color: $accent-color;
+	}
+	&:active {
+		@media screen and (min-width: $xl) {
+			color: $white;
+			opacity: 0.3;
+		}
+	}
 }
 
 .nav-list__item:last-child {
 	margin-right: 0;
+}
+
+.nav-list__item--active {
+	@media screen and (min-width: $xl) {
+		border-bottom: 1px solid white;
+	}
 }
 
 @media screen and (max-width: $xl) {
@@ -48,5 +66,5 @@
 
 .nav-list__link {
 	text-decoration: none;
-	color: #fff;
+	color: inherit;
 }

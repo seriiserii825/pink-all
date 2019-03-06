@@ -3,19 +3,3 @@
 	padding: 0;
 	list-style-type: none;
 }
-
- @mixin open-sans(){
-	font-family: 'Open Sans', 'Arial', sans-serif;
- }
-
- @mixin open-sans-light(){
-	font-family: 'Open Sans Light', 'Arial',  sans-serif;
-}
-
- @mixin open-sans-bold(){
-	font-family: 'Open Sans Bold', 'Arial', sans-serif;
-}
-
- @mixin open-sans-semibold(){
-	font-family: 'Open Sans Semibold', 'Arial', sans-serif;
-}

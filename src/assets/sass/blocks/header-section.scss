@@ -1,0 +1,24 @@
+.section-header {
+	margin-bottom: 80px;
+}
+.sectoin-header__title {
+	display: table;
+	margin: 0 auto;
+	max-width: 765px;
+	font-size: 50px;
+	font-weight: 300;
+	text-align: center;
+	color: $main-color;
+	@media screen and (max-width: $xl) {
+		font-size: 40px;
+	}
+	@media screen and (max-width: $md) {
+		font-size: 24px;
+	}
+}
+.sectoin-header__title--short {
+	max-width: 562px;
+	@media screen and (max-width: $md) {
+		margin-top: 36px;
+	}
+}

@@ -25,7 +25,7 @@ block content
 								source(media="(min-width: 660px)", srcset="assets/i/logo-tablet.svg")
 								img(src="assets/i/logo-mobile.svg" alt="logo")
 						ul.nav-list#js-nav-list
-							li.nav-list__item
+							li.nav-list__item.nav-list__item--active
 								a.nav-list__link(href="#") Главная
 							li.nav-list__item
 								a.nav-list__link(href="#") Фотографии
@@ -52,6 +52,8 @@ block content
 				.page-header__image
 					img(src="assets/i/hand.png", alt="")
 		//.page-header
+
+		include ../includes/offer
 
 
 		include ../includes/footer

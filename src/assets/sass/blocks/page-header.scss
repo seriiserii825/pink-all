@@ -2,6 +2,9 @@
 	position: relative;
 	min-height: 854px;
 	background: url("../i/page-header-bg.jpg") no-repeat center;
+	@media screen and (max-width: $md) {
+		margin-bottom: 272px;
+	}
 }
 
 @media screen and (max-width: $xl) {
@@ -86,6 +89,18 @@
 	border: 2px solid #fff;
 	border-radius: 30px;
 	background: none;
+	transition: all .4s ease;
+	cursor: pointer;
+
+	&:hover {
+		color: $accent-color;
+		background: $white;
+	}
+
+	&:active {
+		color: $vanila-ice;
+		background: $white;
+	}
 }
 
 @media screen and (max-width: $md) {

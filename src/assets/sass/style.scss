@@ -9,10 +9,10 @@ body {
 	margin: 0;
 	padding: 0;
 	padding-bottom: 700px;
-	@include open-sans;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-size: 18px;
-	color: $text-color;
-	background: $bg-color;
+	color: $ebon-clay;
+	background: $smoky-white;
 }
 
 * {
@@ -84,3 +84,5 @@ ul {
 @import 'blocks/nav-list';
 @import 'blocks/close-menu';
 @import 'blocks/show-menu';
+@import 'blocks/offer';
+@import 'blocks/header-section';
