@@ -1,0 +1,38 @@
+.nav-list
+	display flex
+	justify-content space-between
+	@media screen and (max-width: xl) {
+		display none
+	}
+
+.nav-list__item
+	margin-right 82px
+	&:last-child
+		margin-right 0
+
+.nav-list--show
+	@media screen and (max-width: xl) {
+		position absolute
+		top 109px
+		left 0
+		display block
+		width 100%
+		@media screen and (max-width: md) {
+			top 66px
+		}
+	}
+	.nav-list__item
+		@media screen and (max-width: xl) {
+			display block
+			margin-right 0
+			height 63px
+			line-height 63px
+			text-align center
+			text-transform uppercase
+			background main-color
+			box-shadow 0 1px 0 #000000, inset 0 1px 0 rgba(255, 255, 255, 0.15)
+		}
+
+.nav-list__link
+	text-decoration none
+	color white

@@ -1,22 +1,45 @@
 extends template
 
-block yandex-api
-	script(src="https://api-maps.yandex.ru/2.1/?lang=ru_ru&apikey=*7494e3e7-008f-4e03-bd72-31a4650591f7" type="text/javascript")
-
 block title
 	title Главная
 
 block content
-	.container
-		p Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, ducimus quos adipisci voluptatum tempore eligendi magnam numquam maiores, id placeat unde suscipit! Et non, ratione voluptatibus vitae commodi quo cumque!
 	.hidden
-
 		//- include ../../../build/assets/i/svg/inline/sprite.svg
+
+	.container-big
+		.page-header
+			.nav-menu#js-nav-menu
+				.container
+					.nav-menu__wrapper
+						button.close-menu.nav-menu__close-menu#js-close-menu
+							span
+							span
+						button.show-menu.nav-menu__show-menu#js-show-menu
+							span
+							span
+							span
+						.logo.nav-menu__logo
+							picture
+								source(media="(min-width: 1200px)", srcset="assets/i/logo-desktop.svg")
+								source(media="(min-width: 660px)", srcset="assets/i/logo-tablet.svg")
+								img(src="assets/i/logo-mobile.svg" alt="logo")
+						ul.nav-list#js-nav-list
+							li.nav-list__item
+								a.nav-list__link(href="#") Главная
+							li.nav-list__item
+								a.nav-list__link(href="#") Фотографии
+							li.nav-list__item
+								a.nav-list__link(href="#") Конкурс
+							li.nav-list__item
+								a.nav-list__link(href="#") HTML Academy
+			//.nav-menu
+		//.page-header
+
 
 		include ../includes/footer
 
 	include ../includes/ie-scripts
 	include ../includes/scripts.pug
 	script(src="assets/js/main.min.js")
-	script(src="assets/js/yandex-map.js")
 

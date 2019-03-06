@@ -8,8 +8,9 @@
 body
 	margin 0
 	padding 0
+	padding-bottom 700px
 	open-sans()
-	font-size 14px
+	font-size 18px
 	color text-color
 	background bg-color
 
@@ -32,15 +33,29 @@ img
 .hidden
 	display none
 
+.container-big
+	margin 0 auto
+	width 1200px
+	outline 1px solid green
+	@media screen and (max-width: xl) {
+		width 660px
+	}
+	@media screen and (max-width: md) {
+		width 320px
+	}
+
 .container
 	margin 0 auto
 	padding: 0 120px
-	max-width 1200px
+	width 1200px
 	outline 1px solid red
 
+	@media screen and (max-width: xl) {
+		padding 0 20px
+		width 620px
+	}
 	@media screen and (max-width: md) {
-		padding 0
-		width 768px
+		width 280px
 	}
 
 p
@@ -49,3 +64,9 @@ p
 
 ul
 	reset-list()
+
+@import 'blocks/page-header.styl'
+@import 'blocks/nav-menu.styl'
+@import 'blocks/nav-list.styl'
+@import 'blocks/close-menu.styl'
+@import 'blocks/show-menu.styl'
