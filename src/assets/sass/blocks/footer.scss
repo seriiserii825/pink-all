@@ -1,0 +1,43 @@
+.footer {
+	padding: 70px 0;
+}
+.footer__content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	@media screen and (max-width: $md) {
+		display: block;
+	}
+}
+.footer__logo {
+	@media screen and (max-width: $md) {
+		margin-bottom: 38px;
+		text-align: center;
+	}
+}
+.footer__socials {
+	@media screen and (max-width: $md) {
+		margin-bottom: 34px;
+		justify-content: center;
+	}
+	.socials__item {
+		transition: all .4s ease;
+		&:hover {
+			border-color: $dark-blue;
+		}
+		&:active {
+			opacity: 0.3;
+		}
+	}
+}
+.footer__developer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	@media screen and (max-width: $md) {
+		justify-content: center;
+	}
+		span {
+			margin-right: 14px;
+		}
+}
