@@ -1,0 +1,67 @@
+extends template
+
+block title
+	title Фото
+
+block content
+	.hidden
+		//- include ../../../build/assets/i/svg/inline/sprite.svg
+
+	.container-big
+		.page-header.page-header--photo
+			.nav-menu#js-nav-menu
+				.container
+					.nav-menu__wrapper
+						button.close-menu.nav-menu__close-menu#js-close-menu
+							span
+							span
+						button.show-menu.nav-menu__show-menu#js-show-menu
+							span
+							span
+							span
+						.logo.nav-menu__logo
+							picture
+								source(media="(min-width: 1200px)", srcset="assets/i/logo-desktop.svg")
+								source(media="(min-width: 660px)", srcset="assets/i/logo-tablet.svg")
+								img(src="assets/i/logo-mobile.svg" alt="logo")
+						block main-nav
+							ul.nav-list#js-nav-list
+								li.nav-list__item
+									a.nav-list__link(href="index.html") Главная
+								li.nav-list__item.nav-list__item--active
+									a.nav-list__link() Фотографии
+								li.nav-list__item
+									a.nav-list__link(href="#") Конкурс
+								li.nav-list__item
+									a.nav-list__link(href="#") HTML Academy
+			//.nav-menu
+
+			.page-header__center
+				.page-header__content
+					h1.page-header__title Фотографии пользователей
+		//.page-header
+
+		.intro Взгляните на фотографии, которые выкладывают пользователи! Видите, как не хватает ваших?
+
+		.panorama
+			picture
+				source(media="(min-width: 1200px)", srcset="assets/i/panorama.jpg")
+				source(media="(min-width: 660px)", srcset="assets/i/panorama-tablet.jpg")
+				img(src="assets/i/panorama-mobile.jpg", alt="panorama")
+			.panorama__label панорама дня
+			.comment.panorama__comment
+				.comment__data
+					span.comment__name Анна
+					span.comment__time (5 минут назад)
+				.panorama__like.comment__like
+					span.comment__number нравится: 215
+					img(src="assets/i/panorama-icon.svg" alt="icon").comment__icon
+				.comment__text Прыгать или нет? Напишите в коментарии свой совет и смотрите прямую трансляцию в перископе, задавайте свои вопросы!
+
+		include ../includes/footer
+
+	include ../includes/ie-scripts
+	include ../includes/scripts.pug
+	script(src="assets/libs/slick/slick/slick.min.js")
+	script(src="assets/js/main.min.js")
+

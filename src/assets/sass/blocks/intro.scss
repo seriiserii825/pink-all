@@ -1,0 +1,13 @@
+.intro {
+	padding: 100px 0 90px;
+	margin: 0 auto;
+	max-width: 590px;
+	font-size: 18px;
+	line-height: 30px;
+	text-align: center;
+	@media screen and (max-width: $xl) {
+		padding: 52px 0 56px;
+		max-width: 250px;
+		font-size: 14px;
+	}
+}

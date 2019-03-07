@@ -63,9 +63,12 @@
 .page-header__title {
 	width: 236px;
 	font-size: 50px;
+	font-weight: 300;
 	line-height: 1.2;
-	font-weight: normal;
 	text-align: center;
+	&.page-header__title--photo {
+		width: 400px;
+	}
 }
 
 @media screen and (max-width: $xl) {
@@ -158,5 +161,24 @@
 		bottom: 3px;
 		width: 256px;
 		height: 286px;
+	}
+}
+.page-header--photo {
+	&.page-header--photo {
+		min-height: 394px;
+		background-position: center top;
+		@media screen and (max-width: $md) {
+			margin-bottom: 0;
+			min-height: 238px;
+		}
+	}
+	.page-header__content {
+		top: 60%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		height: auto;
+	}
+	.page-header__title {
+		width: 400px;
 	}
 }

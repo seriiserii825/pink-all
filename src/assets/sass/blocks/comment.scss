@@ -1,0 +1,37 @@
+.comment {
+	padding: 30px 26px;
+	background: $smoky-white;
+}
+.comment__name {
+	margin-right: 4px;
+	font-size: 14px;
+	line-height: 24px;
+	font-weight: bold;
+	color: $main-color;
+}
+.comment__time {
+	font-size: 12px;
+	line-height: 24px;
+	font-weight: 300;
+	text-transform: uppercase;
+	color: $main-color;
+}
+.comment__like {
+	font-size: 14px;
+	line-height: 24px;
+	font-weight: 300;
+	text-transform: uppercase;
+	color: $accent-color;
+}
+.comment__number {
+	margin-right: 16px;
+}
+.comment-icon {
+	width: 15px;
+	height: 12px;
+}
+.comment__text {
+	font-size: 14px;
+	line-height: 24px;
+	color: $main-color;
+}

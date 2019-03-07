@@ -68,7 +68,7 @@ p {
 .container {
 	margin: 0 auto;
 	width: 960px;
-	// outline: 1px solid #f00;
+	outline: 1px solid #f00;
 }
 
 @media screen and (max-width: $xl) {
@@ -99,3 +99,6 @@ p {
 @import 'blocks/map';
 @import 'blocks/socials';
 @import 'blocks/footer';
+@import 'blocks/intro';
+@import 'blocks/panorama';
+@import 'blocks/comment';

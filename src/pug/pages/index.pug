@@ -24,15 +24,16 @@ block content
 								source(media="(min-width: 1200px)", srcset="assets/i/logo-desktop.svg")
 								source(media="(min-width: 660px)", srcset="assets/i/logo-tablet.svg")
 								img(src="assets/i/logo-mobile.svg" alt="logo")
-						ul.nav-list#js-nav-list
-							li.nav-list__item.nav-list__item--active
-								a.nav-list__link(href="#") Главная
-							li.nav-list__item
-								a.nav-list__link(href="#") Фотографии
-							li.nav-list__item
-								a.nav-list__link(href="#") Конкурс
-							li.nav-list__item
-								a.nav-list__link(href="#") HTML Academy
+						block main-nav
+							ul.nav-list#js-nav-list
+								li.nav-list__item.nav-list__item--active
+									a.nav-list__link() Главная
+								li.nav-list__item
+									a.nav-list__link(href="photo.html") Фотографии
+								li.nav-list__item
+									a.nav-list__link(href="#") Конкурс
+								li.nav-list__item
+									a.nav-list__link(href="#") HTML Academy
 			//.nav-menu
 
 			.page-header__center
