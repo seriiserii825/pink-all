@@ -50,7 +50,7 @@ p {
 .container-big {
 	margin: 0 auto;
 	width: 1200px;
-	outline: 1px solid #008000;
+	// outline: 1px solid #008000;
 }
 
 @media screen and (max-width: $xl) {
@@ -68,7 +68,7 @@ p {
 .container {
 	margin: 0 auto;
 	width: 960px;
-	outline: 1px solid #f00;
+	// outline: 1px solid #f00;
 }
 
 @media screen and (max-width: $xl) {
@@ -91,3 +91,4 @@ p {
 @import 'blocks/show-menu';
 @import 'blocks/offer';
 @import 'blocks/header-section';
+@import 'blocks/clock';

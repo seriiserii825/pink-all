@@ -3,3 +3,7 @@
 	padding: 0;
 	list-style-type: none;
 }
+
+@mixin myriad {
+	font-family: 'Myriad Pro', 'Arial', sans-serif;
+}

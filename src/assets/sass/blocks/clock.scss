@@ -1,0 +1,46 @@
+.clock__box {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.clock__img {
+	position: relative;
+	flex-shrink: 0;
+	margin-right: 66px;
+	width: 300px;
+}
+.clock__text-image {
+	position: absolute;
+	top: 108px;
+	left: 78px;
+	font-size: 120px;
+	font-weight: bold;
+	color: $accent-color;
+}
+
+.clock__title {
+	margin-bottom: 28px;
+	font-size: 30px;
+	font-weight: bold;
+}
+.clock__text {
+	margin-bottom: 36px;
+	@include myriad;
+	line-height: 30px;
+	color: $ebon-clay;
+}
+.clock__link {
+	@include myriad;
+	font-size: 18px;
+	text-decoration: underline;
+	color: $accent-color;
+	transition: all .4s ease;
+	&:hover {
+		color: $ebon-clay;
+	}
+	&:active {
+		text-decoration: none;
+		color: $ebon-clay;
+		opacity: 0.3;
+	}
+}
