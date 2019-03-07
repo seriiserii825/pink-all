@@ -1,0 +1,8 @@
+.packages {
+	padding: 150px 0 96px;
+	background: linear-gradient(175deg,#fff,#fff 16%,#f2f2f2 16%,#f2f2f2);
+	@media screen and (max-width: $xl) {
+		padding: 86px 0 66px;
+		background: linear-gradient(175deg,#fff,#fff 12%,#f2f2f2 12%,#f2f2f2);
+	}
+}

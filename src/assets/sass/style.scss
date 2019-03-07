@@ -12,7 +12,7 @@ body {
 	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-size: 18px;
 	color: $ebon-clay;
-	background: $smoky-white;
+	background: $white;
 }
 
 * {
@@ -73,7 +73,6 @@ p {
 
 @media screen and (max-width: $xl) {
 	.container {
-		padding: 0 20px;
 		width: 620px;
 	}
 }
@@ -94,3 +93,5 @@ p {
 @import 'blocks/clock';
 @import 'blocks/reviews';
 @import 'blocks/slider';
+@import 'blocks/packages';
+@import 'blocks/table';

@@ -59,5 +59,26 @@ $(function () {
 			]
 	});
 
+
+	//table slider
+	$('#js-table').slick({
+			dots: true,
+      arrows: false,
+      responsive: [{
+        breakpoint: 1980,
+        settings: "unslick" // destroys slick,
+      },
+      {
+        breakpoint: 660,
+        settings: {
+					centerPadding: '20px',
+					centerMode: true,
+          dots: true
+        },
+      }
+    ]
+	});
 });
+
+
 
