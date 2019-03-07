@@ -1,0 +1,15 @@
+.reviews{
+	padding: 70px 0 40px;
+	background: $white;
+	@media screen and (max-width: $xl) {
+		padding-bottom: 70px;
+	}
+}
+
+.reviews__img {
+	margin: 0 auto 30px;
+	width: 86px;
+	@media screen and (max-width: $xl) {
+		display: none;
+	}
+}

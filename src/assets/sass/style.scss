@@ -1,7 +1,7 @@
 @import 'partials/fonts';
 @import 'partials/variables';
 @import 'partials/mixins';
-// @import '../libs/slick/slick/slick.css'
+@import '../libs/slick/slick/slick.scss';
 // @import '../libs/plyr/dist/plyr.css'
 // @import '../../../build/assets/i/svg/bg/css/sprite.css'
 
@@ -92,3 +92,5 @@ p {
 @import 'blocks/offer';
 @import 'blocks/header-section';
 @import 'blocks/clock';
+@import 'blocks/reviews';
+@import 'blocks/slider';

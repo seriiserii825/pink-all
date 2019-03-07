@@ -32,19 +32,6 @@ $(function () {
 		navList.slideDown()
 		closeMenu.show();
 		showMenu.hide();
-		// if(navList.hasClass('nav-list--show')){
-		// 	navList.removeClass('nav-list--show');
-		// 	navMenu.removeClass('nav-menu--show');
-		// 	navList.slideUp();
-		// 	closeMenu.hide();
-		// 	showMenu.show();
-		// }else{
-		// 	navList.addClass('nav-list--show');
-		// 	navMenu.addClass('nav-menu--show');
-		// 	navList.slideDown()
-		// 	closeMenu.show();
-		// 	showMenu.hide();
-		// }
 	});
 
 	closeMenu.on('click', function(){
@@ -53,6 +40,23 @@ $(function () {
 		navList.slideUp();
 		closeMenu.hide();
 		showMenu.show();
+	});
+
+	//reviews slider
+	$('#js-reviews-slider').slick({
+		fade: true,
+		speed: 300,
+		cssEase: 'linear',
+		dots: false,
+		responsive: [
+				{
+					breakpoint: 1200,
+					settings: {
+						arrows: false,
+						dots: true
+					}
+				}
+			]
 	});
 
 });
