@@ -70,6 +70,9 @@ p {
 	width: 960px;
 	outline: 1px solid #f00;
 }
+.container--940 {
+	width: 940px;
+}
 
 @media screen and (max-width: $xl) {
 	.container {
@@ -102,3 +105,4 @@ p {
 @import 'blocks/intro';
 @import 'blocks/panorama';
 @import 'blocks/comment';
+@import 'blocks/gallery';

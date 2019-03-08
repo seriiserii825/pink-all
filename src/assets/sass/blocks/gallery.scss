@@ -1,0 +1,30 @@
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-column-gap: 20px;
+	grid-row-gap: 54px;
+	@media screen and (max-width: $md) {
+		display: block;
+	}
+}
+.gallery__item {
+	background-color: $smoky-white;
+	@media screen and (max-width: $md) {
+		margin-bottom: 20px;
+	}
+}
+.gallery__comment {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 24px 26px;
+	height: 155px;
+}
+.gallery__comment-text {
+	flex-grow: 1;
+}
+.gallery__comment-like {
+	order: 5;
+	display: flex;
+	justify-content: space-between;
+}

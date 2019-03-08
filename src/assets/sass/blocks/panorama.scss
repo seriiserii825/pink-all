@@ -1,6 +1,9 @@
 .panorama {
 	position: relative;
 }
+.panorama__comment-wrap {
+	background: $white;
+}
 .panorama__label {
 	position: absolute;
 	top: 54px;
