@@ -1,20 +1,37 @@
-.redactor
-	.redactor__img
-		img(src="assets/i/redactor.jpg", alt="redactor")
-	.redactor__content
-		.redactor__tools
-			.redactor__tabs
-				.redactor__tabs-button
-					.redactro__tabs-button-item
-						svg.redactor__crop-icon
-							use(xlink:href="#crop")
-				.redactor__tabs-content
-					.redactors__tabs-content-item
-						.redactors__line
-						.redactor__circle
+.redactor__wrap
+	.container
+		.redactor
+			.redactor__img
+				img(src="assets/i/redactor.jpg", alt="redactor")
+			.redactor__content
+				.redactor__tools
+					.redactor__tabs#js-redactor-tabs
+							.redactor__tabs-button.redactor__tabs-button--crop(data-tab="tab1")
+								svg.redactor__crop-icon.redactor__icon
+									use(xlink:href="#crop2")
+							.redactor__tabs-content.redactor__tabs-content--crop#tab1
+								.redactor__line
+								.redactor__circle.redactor__circle--crop
+							.redactor__tabs-line.redactor__tabs-line--1
+
+							.redactor__tabs-button.redactor__tabs-button--fill(data-tab="tab2")
+								svg.redactor__fill-icon.redactor__icon
+									use(xlink:href="#fill")
+							.redactor__tabs-content.redactor__tabs-content--fill#tab2
+								.redactor__line
+								.redactor__circle.redactor__circle--fill
+							.redactor__tabs-line.redactor__tabs-line--2
+
+							.redactor__tabs-button.redactor__tabs-button--contrast(data-tab="tab3")
+								svg.redactor__contrast-icon.redactor__icon
+									use(xlink:href="#contrast")
+							.redactor__tabs-content.redactor__tabs-content--contrast#tab3
+								.redactor__line
+								.redactor__circle.redactor__circle--contrast
+							.redactor__tabs-line.redactor__tabs-line--3
 
 
-		.redactor__buttons
-			button.button-round.button-round--accent Запостить
-			button.button-round.button-round--accent(disable) Отмена
+				.redactor__buttons
+					button.redactor__button.button-round.button-round--accent Запостить
+					button.redactor__button.button-round.button-round--accent.button-round--disable Отмена
 

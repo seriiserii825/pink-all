@@ -13,6 +13,11 @@
 		color: $accent-color;
 		border-color: $accent-color;
 	}
+	&.button-round--disable {
+		color: $black;
+		border-color: $black;
+		opacity: 0.1;
+	}
 
 	&:hover {
 		color: $accent-color;

@@ -82,7 +82,9 @@ p {
 
 @media screen and (max-width: $md) {
 	.container {
-		width: 280px;
+		padding-left: 20px;
+		padding-right: 20px;
+		width: 320px;
 	}
 }
 

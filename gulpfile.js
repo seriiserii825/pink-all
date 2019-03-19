@@ -56,21 +56,10 @@ gulp.task('font-convert', gulp.parallel('ttf2woff2', 'ttf2woff'));
 //, {since: gulp.lastRun('svg')}
 gulp.task('svg', function () {
   return gulp.src('src/assets/i/svg/inline/*.svg')
-		// .pipe(cheerio(cleanSvg({
-		// 	tags: ["title", "desc"],
-		// 	attributes: ["style", "fill*", "clip*", "stroke*"]
-    // })))
 		.pipe(svgmin({
 			js2svg: {
 					pretty: true
-			},
-			plugins: [
-					{
-							inlineStyles: {
-									removeMatchedSelectors: false
-							}
-					}
-			]
+			}
 		}))
     .pipe(replace('&gt;', '>'))
     .pipe(svgSprite({
@@ -78,6 +67,9 @@ gulp.task('svg', function () {
 				symbol: {
 					sprite: "../sprite.svg",
 				}
+			},
+			svg: {
+				namespaceClassnames: false
 			}
     }))
     .pipe(gulp.dest("build/assets/i/svg/inline/"));
