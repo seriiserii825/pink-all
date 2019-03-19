@@ -36,6 +36,16 @@
 		width: 272px;
 	}
 }
+.redactor__tabs {
+	@media screen and (max-width: $md) {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 36px;
+		padding-bottom: 40px;
+		border-bottom: 1px solid $iron;
+	}
+}
 .redactor__tabs-group {
 	display: flex;
 	justify-content: flex-start;
@@ -45,12 +55,18 @@
 	border-bottom: 1px solid $iron;
 	@media screen and (max-width: $md) {
 		display: block;
+		border: none;
 	}
 }
 .redactor__tabs-content {
 	position: relative;
 	@media screen and (max-width: $md) {
-		display: none;
+		position: absolute;
+		bottom: 40px;
+		left: 0;
+		width: 280px;
+		height: 100%;
+		z-index: 5;
 	}
 }
 .redactor__circle {
@@ -62,6 +78,10 @@
 	background: $smoky-white;
 	border: 2px solid $accent-color;
 	border-radius: 50%;
+	@media screen and (max-width: $md) {
+		top: auto;
+		bottom: -4px;
+	}
 	&--fill {
 		left: 85%;
 	}
@@ -73,18 +93,17 @@
 	margin-right: 50px;
 	width: 44px;
 	height: 44px;
+	fill: $accent-color;
 	@media screen and (max-width: $xl) {
 		margin-right: 30px;
 		width: 22px;
 		height: 22px;
 	}
 	@media screen and (max-width: $md) {
+		margin-right: 0;
 		width: 44px;
 		height: 44px;
 	}
-}
-.redactor__crop-icon{
-	fill: $accent-color;
 }
 .redactor__line {
 	width: 290px;
@@ -94,7 +113,30 @@
 		width: 203px;
 	}
 	@media screen and (max-width: $md) {
+		position: absolute;
+		bottom: 0;
+		left: 0;
 		width: 100%;
+	}
+}
+.redactor__tabs-button {
+	@media screen and (max-width: $md) {
+		position: relative;
+		z-index: 10;
+	}
+	.redactor__icon {
+		@media screen and (max-width: $md) {
+			fill: black;
+			opacity: 0.3;
+		}
+	}
+}
+.redactor__tabs-button--active {
+	.redactor__icon {
+		@media screen and (max-width: $md) {
+			fill: $accent-color;
+			opacity: 1;
+		}
 	}
 }
 .redactor__buttons {
