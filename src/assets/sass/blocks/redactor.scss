@@ -36,16 +36,54 @@
 		width: 272px;
 	}
 }
-.redactor__tabs-group {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	margin-bottom: 15px;
-	padding-bottom: 13px;
-	border-bottom: 1px solid $iron;
-	@media screen and (max-width: $md) {
-		display: block;
+.redactor__tabs {
+	display: grid;
+	grid-template-columns: 48px 290px;
+	grid-template-rows: repeat(6, auto);
+	grid-column-gap: 50px;
+	grid-row-gap: 15px;
+	grid-template-areas: "button-crop content-crop"
+											"line1 line1"
+											"button-fill content-fill"
+											"line2 line2"
+											"button-contrast content-contrast"
+											"line3 line3";
+	@media screen and (max-width: $xl) {
+		grid-template-columns: 22px 202px;
+		grid-column-gap: 30px;
 	}
+}
+.redactor__tabs-button--crop {
+	grid-area: button-crop;
+}
+.redactor__tabs-button--fill {
+	grid-area: button-fill;
+}
+.redactor__tabs-button--contrast {
+	grid-area: button-contrast;
+}
+.redactor__tabs-content--crop {
+	grid-area: content-crop;
+}
+.redactor__tabs-content--fill {
+	grid-area: content-fill;
+}
+.redactor__tabs-content--contrast {
+	grid-area: content-contrast;
+}
+.redactor__tabs-line {
+	width: 100%;
+	height: 1px;
+	background: $iron;
+}
+.redactor__tabs-line--1 {
+	grid-area: line1;
+}
+.redactor__tabs-line--2 {
+	grid-area: line2;
+}
+.redactor__tabs-line--3 {
+	grid-area: line3;
 }
 .redactor__tabs-content {
 	position: relative;
@@ -53,9 +91,36 @@
 		display: none;
 	}
 }
+.redactor__line {
+	position: absolute;
+	top: 48%;
+	left: 0;
+	width: 290px;
+	height: 2px;
+	background: $ebon-clay;
+	@media screen and (max-width: $xl) {
+		width: 203px;
+	}
+	@media screen and (max-width: $md) {
+		width: 100%;
+	}
+}
+.redactor__icon {
+	width: 44px;
+	height: 44px;
+	fill: $accent-color;
+	@media screen and (max-width: $xl) {
+		width: 22px;
+		height: 22px;
+	}
+	@media screen and (max-width: $md) {
+		width: 44px;
+		height: 44px;
+	}
+}
 .redactor__circle {
 	position: absolute;
-	top: -4px;
+	top: 41%;
 	left: 25%;
 	width: 10px;
 	height: 10px;
@@ -67,34 +132,6 @@
 	}
 	&--contrast {
 		left: 55%;
-	}
-}
-.redactor__icon {
-	margin-right: 50px;
-	width: 44px;
-	height: 44px;
-	@media screen and (max-width: $xl) {
-		margin-right: 30px;
-		width: 22px;
-		height: 22px;
-	}
-	@media screen and (max-width: $md) {
-		width: 44px;
-		height: 44px;
-	}
-}
-.redactor__crop-icon{
-	fill: $accent-color;
-}
-.redactor__line {
-	width: 290px;
-	height: 2px;
-	background: $ebon-clay;
-	@media screen and (max-width: $xl) {
-		width: 203px;
-	}
-	@media screen and (max-width: $md) {
-		width: 100%;
 	}
 }
 .redactor__buttons {

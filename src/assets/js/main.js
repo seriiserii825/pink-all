@@ -79,13 +79,13 @@ $(function () {
     ]
 	});
 
-	//tabs
-	$('#js-redactor-tabs .redactor__tabs-content').hide().eq(0).show();
-	$('#js-redactor-tabs .redactor__tabs-button').on('click', function(){
-		console.log($(this));
-		let $id = $(this).attr('data-tab');
-		console.log($id);
-	});
+	// //tabs
+	// $('#js-redactor-tabs .redactor__tabs-content').hide().eq(0).show();
+	// $('#js-redactor-tabs .redactor__tabs-button').on('click', function(){
+	// 	console.log($(this));
+	// 	let $id = $(this).attr('data-tab');
+	// 	console.log($id);
+	// });
 });
 
 
