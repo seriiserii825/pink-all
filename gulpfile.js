@@ -18,7 +18,7 @@ let gulp = require('gulp'),
   svgmin = require('gulp-svgmin'),
   rename = require('gulp-rename'),
   svgSprite = require('gulp-svg-sprite'),
-  clean   = require('gulp-cheerio-clean-svg'),
+  cleanSvg   = require('gulp-cheerio-clean-svg'),
 	svgBg = require("gulp-svg-sprites"),
   //images
   webp = require('gulp-webp'),
@@ -35,53 +35,45 @@ let gulp = require('gulp'),
   browserSync = require('browser-sync').create(),
   rimraf = require("rimraf"),
   gulpif = require("gulp-if"),
-  gp = require('gulp-load-plugins')();
+	replace = require('gulp-replace');
 
 gulp.task('ttf2woff', function(){
   gulp.src(['src/assets/fonts/*.ttf'])
-    .pipe(gp.debug({title: "woff"}))
+    .pipe(debug({title: "woff"}))
     .pipe(ttf2woff())
     .pipe(gulp.dest('src/assets/fonts/'));
 });
 
 gulp.task('ttf2woff2', function(){
   gulp.src(['src/assets/fonts/*.ttf'])
-    .pipe(gp.debug({title: "woff2"}))
+    .pipe(debug({title: "woff2"}))
     .pipe(ttf2woff2())
     .pipe(gulp.dest('src/assets/fonts/'));
 });
 
 gulp.task('font-convert', gulp.parallel('ttf2woff2', 'ttf2woff'));
 
+//, {since: gulp.lastRun('svg')}
 gulp.task('svg', function () {
-  return gulp.src('src/assets/i/svg/inline/*.svg', {since: gulp.lastRun('svg')})
-  .pipe(gp.newer('build/assets/i/svg/sprite/'))
-    .pipe(gp.svgmin({
-      js2svg: {
-        pretty: true
-      }
-    }))
-    .pipe(gp.cheerio(clean(
-      {
-        removeSketchType: true,
-        removeEmptyGroup: true,
-        removeEmptyDefs: true,
-        removeEmptyLines: true,
-        removeComments: true,
-        tags: [
-          'title',
-          'desc',
-        ],
-        attributes: [
-          'style',
-          'fill*',
-          'stroke*',
-          "class"
-        ],
-      }
-    )))
-    .pipe(gp.replace('&gt;', '>'))
-    .pipe(gp.svgSprite({
+  return gulp.src('src/assets/i/svg/inline/*.svg')
+		// .pipe(cheerio(cleanSvg({
+		// 	tags: ["title", "desc"],
+		// 	attributes: ["style", "fill*", "clip*", "stroke*"]
+    // })))
+		.pipe(svgmin({
+			js2svg: {
+					pretty: true
+			},
+			plugins: [
+					{
+							inlineStyles: {
+									removeMatchedSelectors: false
+							}
+					}
+			]
+		}))
+    .pipe(replace('&gt;', '>'))
+    .pipe(svgSprite({
 			mode: {
 				symbol: {
 					sprite: "../sprite.svg",
@@ -93,54 +85,54 @@ gulp.task('svg', function () {
 
 gulp.task('svg-bg', function () {
     return gulp.src('src/assets/i/svg/bg/*.svg', {since: gulp.lastRun('svg')})
-				.pipe(gp.newer('build/assets/i/svg/bg'))
+				.pipe(newer('build/assets/i/svg/bg'))
         .pipe(svgBg())
         .pipe(gulp.dest("build/assets/i/svg/bg"));
 });
 
 gulp.task('pug', function () {
   return gulp.src('src/pug/pages/*.pug')
-    .pipe(gp.debug({title: "pug"}))
-    .pipe(gp.pug({
+    .pipe(debug({title: "pug"}))
+    .pipe(pug({
       pretty: true
     }))
     .pipe(gulp.dest('build/'))
     .pipe(browserSync.reload({
       stream: true
     }));
-  // .pipe(gp.notify("Change html"));
+  // .pipe(notify("Change html"));
 });
 
 
 gulp.task("css", function () {
   return gulp.src('src/assets/sass/style.scss')
-    .pipe(gp.plumber())
-    .pipe(gp.sourcemaps.init())
-    .pipe(gp.wait(500))
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
+    .pipe(wait(500))
     .pipe(sass({
       outputStyle: 'expanded'
     }).on('error', notify.onError(function (error) {
       return 'An error occurred while compiling sass.\nLook in the console for details.\n' + error;
     })))
-    .pipe(gp.autoprefixer({
+    .pipe(autoprefixer({
       cascade: false
     }))
     .pipe(gulp.dest('build/assets/css/'))
-    .pipe(gp.csso())
-    .pipe(gp.rename("style.min.css"))
-    .pipe(gp.sourcemaps.write('.'))
+    .pipe(csso())
+    .pipe(rename("style.min.css"))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('build/assets/css/'))
     .pipe(browserSync.reload({
       stream: true
     }));
-  // .pipe(gp.notify("Change css"));
+  // .pipe(notify("Change css"));
 });
 
 //============================
 
 gulp.task("libs", function () {
   return gulp.src('src/assets/libs/**/*.*', {since: gulp.lastRun('libs')})
-    .pipe(gp.newer('src/assets/libs/**/*.*'))
+    .pipe(newer('src/assets/libs/**/*.*'))
     .pipe(gulp.dest('build/assets/libs'))
     .on('end', browserSync.reload);
 });
@@ -157,7 +149,7 @@ gulp.task("favicon", function () {
 ====================================================*/
 gulp.task("fonts", function () {
   return gulp.src('src/assets/fonts/**/*.*', {since: gulp.lastRun('fonts')})
-    .pipe(gp.newer('build/assets/fonts'))
+    .pipe(newer('build/assets/fonts'))
     .pipe(gulp.dest('build/assets/fonts'))
     .on('end', browserSync.reload);
 });
@@ -165,8 +157,8 @@ gulp.task("fonts", function () {
 
 gulp.task("webp", function () {
   return gulp.src('src/assets/i/**/*.{jpg, png}', {since: gulp.lastRun('webp')})
-    .pipe(gp.newer('build/assets/i'))
-    .pipe(gp.debug({title: "webp"}))
+    .pipe(newer('build/assets/i'))
+    .pipe(debug({title: "webp"}))
     .pipe(webp())
     .pipe(gulp.dest('build/assets/i'))
     .on('end', browserSync.reload);
@@ -174,21 +166,21 @@ gulp.task("webp", function () {
 
 gulp.task("js", function () {
   return gulp.src('src/assets/js/main.js')
-    .pipe(gp.sourcemaps.init())
-    .pipe(gp.plumber())
-    .pipe(gp.rigger())
-    .pipe(gp.babel({
+    .pipe(sourcemaps.init())
+    .pipe(plumber())
+    .pipe(rigger())
+    .pipe(babel({
       presets: ['@babel/env']
     }))
     .pipe(gulp.dest('build/assets/js'))
-    .pipe(gp.uglify())
-    .pipe(gp.rename("main.min.js"))
-    .pipe(gp.sourcemaps.write())
+    .pipe(uglify())
+    .pipe(rename("main.min.js"))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('build/assets/js'))
     .pipe(browserSync.reload({
       stream: true
     }));
-  // .pipe(gp.notify("Change js"));
+  // .pipe(notify("Change js"));
 });
 
 gulp.task("alljs", function(){
@@ -203,9 +195,9 @@ gulp.task("alljs", function(){
 ====================================================*/
 gulp.task("image", function () {
   return gulp.src('src/assets/i/*.*', {since: gulp.lastRun('image')})
-    .pipe(gp.newer('build/assets/i'))
-    .pipe(gp.debug({title: "image"}))
-		.pipe(gulpif('*.svg', gp.svgmin({
+    .pipe(newer('build/assets/i'))
+    .pipe(debug({title: "image"}))
+		.pipe(gulpif('*.svg', svgmin({
       js2svg: {
         pretty: true
       }
@@ -258,13 +250,13 @@ gulp.task('browser-sync', function () {
 
 gulp.task('default', gulp.series(
   'clean',
+	'svg',
   gulp.parallel(
     'css',
     'js',
     'alljs',
     // 'webp',
-    'svg',
-    'svg-bg',
+    // 'svg-bg',
     'fonts',
     'image',
     'libs',

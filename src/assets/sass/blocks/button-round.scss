@@ -1,0 +1,26 @@
+.button-round {
+	width: 300px;
+	height: 56px;
+	font-size: 21px;
+	font-weight: bold;
+	color: #fff;
+	border: 2px solid #fff;
+	border-radius: 30px;
+	background: none;
+	transition: all .4s ease;
+	cursor: pointer;
+	&.button-round--accent {
+		color: $accent-color;
+		border-color: $accent-color;
+	}
+
+	&:hover {
+		color: $accent-color;
+		background: $white;
+	}
+
+	&:active {
+		color: $vanila-ice;
+		background: $white;
+	}
+}
