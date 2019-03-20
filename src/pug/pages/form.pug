@@ -1,0 +1,54 @@
+extends template
+
+block title
+	title Форм
+
+block content
+	.hidden
+		include ../../../build/assets/i/svg/inline/sprite.svg
+
+	.container-big
+		.page-header.page-header--photo
+			.nav-menu#js-nav-menu
+				.container
+					.nav-menu__wrapper
+						button.close-menu.nav-menu__close-menu#js-close-menu
+							span
+							span
+						button.show-menu.nav-menu__show-menu#js-show-menu
+							span
+							span
+							span
+						.logo.nav-menu__logo
+							picture
+								source(media="(min-width: 1200px)", srcset="assets/i/logo-desktop.svg")
+								source(media="(min-width: 660px)", srcset="assets/i/logo-tablet.svg")
+								img(src="assets/i/logo-mobile.svg" alt="logo")
+						block main-nav
+							ul.nav-list#js-nav-list
+								li.nav-list__item
+									a.nav-list__link(href="index.html") Главная
+								li.nav-list__item
+									a.nav-list__link(href="photo.html") Фотографии
+								li.nav-list__item.nav-list__item--active
+									a.nav-list__link() Конкурс
+								li.nav-list__item
+									a.nav-list__link(href="#") HTML Academy
+			//.nav-menu
+
+			.page-header__center
+				.page-header__center-content
+					h1.page-header__center-title Конкурс на самое безбашенное путешествие с Пинк
+		//.page-header
+
+		.intro
+			.intro__content.intro__content--big Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! <span class="intro--hide-mobile">Пожалуйста, заполните форму ниже:</span>
+
+
+		include ../includes/footer
+
+	include ../includes/ie-scripts
+	include ../includes/scripts.pug
+	script(src="assets/libs/slick/slick/slick.min.js")
+	script(src="assets/js/main.min.js")
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru_RU">
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="assets/i/svg/bg/css/sprite.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.min.css">
+    <title>Фото</title>
+  </head>
+  <body>
+    <div class="hidden"></div>
+    <div class="container-big">
+      <div class="page-header page-header--photo">
+        <div class="nav-menu" id="js-nav-menu">
+          <div class="container">
+            <div class="nav-menu__wrapper">
+              <button class="close-menu nav-menu__close-menu" id="js-close-menu"><span></span><span></span></button>
+              <button class="show-menu nav-menu__show-menu" id="js-show-menu"><span></span><span></span><span></span></button>
+              <div class="logo nav-menu__logo">
+                <picture>
+                  <source media="(min-width: 1200px)" srcset="assets/i/logo-desktop.svg">
+                  <source media="(min-width: 660px)" srcset="assets/i/logo-tablet.svg"><img src="assets/i/logo-mobile.svg" alt="logo">
+                </picture>
+              </div>
+              <ul class="nav-list" id="js-nav-list">
+                <li class="nav-list__item"><a class="nav-list__link" href="index.html">Главная</a></li>
+                <li class="nav-list__item nav-list__item--active"><a class="nav-list__link">Фотографии</a></li>
+                <li class="nav-list__item"><a class="nav-list__link" href="#">Конкурс</a></li>
+                <li class="nav-list__item"><a class="nav-list__link" href="#">HTML Academy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--.nav-menu-->
+        <div class="page-header__center">
+          <div class="page-header__content">
+            <h1 class="page-header__title">Фотографии пользователей</h1>
+          </div>
+        </div>
+      </div>
+      <!--.page-header-->
+      <div class="intro">Взгляните на фотографии, которые выкладывают пользователи! Видите, как не хватает ваших?</div>
+      <div class="panorama">
+        <picture>
+          <source media="(min-width: 1200px)" srcset="assets/i/panorama.jpg">
+          <source media="(min-width: 660px)" srcset="assets/i/panorama-tablet.jpg"><img src="assets/i/panorama-mobile.jpg" alt="panorama">
+        </picture>
+        <div class="panorama__label">панорама дня</div>
+        <div class="comment panorama__comment">
+          <div class="comment__data"><span class="comment__name">Анна</span><span class="comment__time">(5 минут назад)</span></div>
+          <div class="panorama__like comment__like"><span class="comment__number">нравится: 215</span><img class="comment__icon" src="assets/i/panorama-icon.svg" alt="icon"></div>
+          <div class="comment__text">Прыгать или нет? Напишите в коментарии свой совет и смотрите прямую трансляцию в перископе, задавайте свои вопросы!</div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="container">
+          <div class="footer__content">
+            <div class="logo footer__logo"><img src="assets/i/logo-footer-desktop.svg" alt="logo"></div>
+            <div class="socials footer__socials">
+              <div class="socials__item"><a href="#"><img src="assets/i/twitter.svg" alt="twitter"></a></div>
+              <div class="socials__item"><a href="#"><img src="assets/i/facebook.svg" alt="facebook"></a></div>
+              <div class="socials__item"><a href="#"><img src="assets/i/youtube.svg" alt="youtube"></a></div>
+            </div>
+            <div class="developer footer__developer"><span>Разработано</span><img src="assets/i/htmlacademy.svg" alt="htmlacademy"></div>
+          </div>
+        </div>
+      </div>
+    </div><!--[if lt IE 9]>
+<script src="assets/libs/html5shiv/es5-shim.min.js"></script>
+<script src="assets/libs/html5shiv/html5shiv.min.js"></script>
+<script src="assets/libs/html5shiv/html5shiv-printshiv.min.js"></script>
+<script src="assets/libs/html5shiv/respond.min.js"></script>
+<!--<![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/libs/jquery-easy-scroll/jquery.easeScroll.js"></script>
+    <script src="assets/libs/slick/slick/slick.min.js"></script>
+    <script src="assets/js/main.min.js"></script>
+  </body>
+</html>

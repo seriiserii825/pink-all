@@ -78,46 +78,12 @@ $(function () {
       }
     ]
 	});
-
-	function redactorTabs(){
-		$('#js-redactor-tabs .redactor__tabs-group .redactor__tabs-content').hide();
-		$('#js-redactor-tabs .redactor__tabs-group:first-of-type .redactor__tabs-content').show();
-		$('#js-redactor-tabs .redactor__tabs-button').on('click', function(){
-			let $this = $(this);
-			let $id = $(this).attr('data-tab');
-			console.log($id);
-			$('#js-redactor-tabs .redactor__tabs-group .redactor__tabs-content').fadeOut();
-			$($id).fadeIn();
-			$('#js-redactor-tabs .redactor__tabs-button').removeClass('redactor__tabs-button--active');
-			$this.toggleClass('redactor__tabs-button--active');
-		});
-	}
-
-	if($(window).width() < 660){
-		redactorTabs();
-	}
-
-	// $(window).resize(function(){
-	// 	if($(window).width() < 660){
-	// 		redactorTabs();
-	// 	}
-	// })
-
-
-	// var initTabs = false;
-
-	// $(window).resize(function(){
-	// 	if($(window).width() < 660){
-	// 		initTabs = true;
-
-	// 		if (!initTabs) {
-	// 			redactorTabs();
-	// 		}
-	// 	} else {
-	// 		initTabs = false;
-	// 	}
-	// })
 });
 
 
 
+e
+      }
+    }]
+  });
+});
