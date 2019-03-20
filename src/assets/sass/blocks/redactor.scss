@@ -1,204 +1,368 @@
 .redactor {
+
 	display: flex;
+
 	justify-content: space-between;
+
 	padding: 56px 80px;
+
 	background: $smoky-white;
+
 	@media screen and (max-width: $xl) {
+
 		padding-left: 10px;
+
 		padding-right: 10px;
+
 	}
+
 	@media screen and (max-width: $md) {
+
 		display: block;
+
 		padding-left: 0;
+
 		padding-right: 0;
+
 	}
+
 }
+
 .redactor__wrap {
+
 	@media screen and (max-width: $md) {
+
 		background: $smoky-white;
+
 	}
+
 }
+
 .redactor__img {
+
 	flex-grow: 0;
+
 	width: 300px;
+
 	@media screen and (max-width: $md) {
+
 		margin-bottom: 40px;
+
 		width: 280px;
+
 	}
+
 }
+
 .redactor__content {
+
 	display: flex;
+
 	flex-direction: column;
+
 	justify-content: space-between;
+
 	flex-grow: 0;
+
 	width: 412px;
+
 	@media screen and (max-width: $xl) {
+
 		width: 272px;
+
 	}
+
 }
+
 .redactor__tabs {
-<<<<<<< HEAD
-	display: grid;
-	grid-template-columns: 48px 290px;
-	grid-template-rows: repeat(6, auto);
-	grid-column-gap: 50px;
-	grid-row-gap: 15px;
-	grid-template-areas: "button-crop content-crop"
-											"line1 line1"
-											"button-fill content-fill"
-											"line2 line2"
-											"button-contrast content-contrast"
-											"line3 line3";
-	@media screen and (max-width: $xl) {
-		grid-template-columns: 22px 202px;
-		grid-column-gap: 30px;
-=======
-	@media screen and (max-width: $md) {
-		position: relative;
-		display: flex;
-		justify-content: space-between;
-		margin-bottom: 36px;
-		padding-bottom: 40px;
-		border-bottom: 1px solid $iron;
-	}
-}
-.redactor__tabs-group {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	margin-bottom: 15px;
-	padding-bottom: 13px;
-	border-bottom: 1px solid $iron;
-	@media screen and (max-width: $md) {
-		display: block;
-		border: none;
->>>>>>> tab-flex
-	}
-}
-.redactor__tabs-button--crop {
-	grid-area: button-crop;
-}
-.redactor__tabs-button--fill {
-	grid-area: button-fill;
-}
-.redactor__tabs-button--contrast {
-	grid-area: button-contrast;
-}
-.redactor__tabs-content--crop {
-	grid-area: content-crop;
-}
-.redactor__tabs-content--fill {
-	grid-area: content-fill;
-}
-.redactor__tabs-content--contrast {
-	grid-area: content-contrast;
-}
-.redactor__tabs-line {
-	width: 100%;
-	height: 1px;
-	background: $iron;
-}
-.redactor__tabs-line--1 {
-	grid-area: line1;
-}
-.redactor__tabs-line--2 {
-	grid-area: line2;
-}
-.redactor__tabs-line--3 {
-	grid-area: line3;
-}
-.redactor__tabs-content {
-	position: relative;
-	@media screen and (max-width: $md) {
-		position: absolute;
-		bottom: 40px;
-		left: 0;
-		width: 280px;
-		height: 100%;
-		z-index: 5;
-	}
-}
-.redactor__line {
-	position: absolute;
-	top: -4px;
-	left: 25%;
-	width: 10px;
-	height: 10px;
-	background: $smoky-white;
-	border: 2px solid $accent-color;
-	border-radius: 50%;
-	@media screen and (max-width: $md) {
-		top: auto;
-		bottom: -4px;
-	}
-	&--fill {
-		left: 85%;
-	}
-	@media screen and (max-width: $md) {
-		width: 100%;
-	}
-}
-.redactor__icon {
-	width: 44px;
-	height: 44px;
-	fill: $accent-color;
-	@media screen and (max-width: $xl) {
-		width: 22px;
-		height: 22px;
-	}
-	@media screen and (max-width: $md) {
-		margin-right: 0;
-		width: 44px;
-		height: 44px;
-	}
-}
-.redactor__line {
+
+	top: 48%;
+	left: 0;
 	width: 290px;
 	height: 2px;
 	background: $ebon-clay;
 	@media screen and (max-width: $xl) {
 		width: 203px;
-	}
-	@media screen and (max-width: $md) {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
+		border-bottom: 1px solid $iron;
 	}
 }
-.redactor__tabs-button {
-	@media screen and (max-width: $md) {
-		position: relative;
-		z-index: 10;
-	}
-	.redactor__icon {
-		@media screen and (max-width: $md) {
-			fill: black;
-			opacity: 0.3;
-		}
-	}
-}
-.redactor__tabs-button--active {
-	.redactor__icon {
-		@media screen and (max-width: $md) {
-			fill: $accent-color;
-			opacity: 1;
-		}
-	}
-}
-.redactor__buttons {
+
+.redactor__tabs-group {
+
 	display: flex;
-	justify-content: space-between;
-	@media screen and (max-width: $xl) {
+
+	justify-content: flex-start;
+
+	align-items: center;
+
+	margin-bottom: 15px;
+
+	padding-bottom: 13px;
+
+	border-bottom: 1px solid $iron;
+
+	@media screen and (max-width: $md) {
+
 		display: block;
+
+		border: none;
+
+
 	}
+
 }
-.redactor__button {
-	width: 184px;
-	@media screen and (max-width: $xl) {
+
+.redactor__tabs-button--crop {
+
+	grid-area: button-crop;
+
+}
+
+.redactor__tabs-button--fill {
+
+	grid-area: button-fill;
+
+}
+
+.redactor__tabs-button--contrast {
+
+	grid-area: button-contrast;
+
+}
+
+.redactor__tabs-content--crop {
+
+	grid-area: content-crop;
+
+}
+
+.redactor__tabs-content--fill {
+
+	grid-area: content-fill;
+
+}
+
+.redactor__tabs-content--contrast {
+
+	grid-area: content-contrast;
+
+}
+
+.redactor__tabs-line {
+
+	width: 100%;
+
+	height: 1px;
+
+	background: $iron;
+
+}
+
+.redactor__tabs-line--1 {
+
+	grid-area: line1;
+
+}
+
+.redactor__tabs-line--2 {
+
+	grid-area: line2;
+
+}
+
+.redactor__tabs-line--3 {
+
+	grid-area: line3;
+
+}
+
+.redactor__tabs-content {
+
+	position: relative;
+
+	@media screen and (max-width: $md) {
+
+		position: absolute;
+
+		bottom: 40px;
+
+		left: 0;
+
+		width: 280px;
+
+		height: 100%;
+
+		z-index: 5;
+
+	}
+
+}
+
+.redactor__circle {
+
+	position: absolute;
+
+	top: -4px;
+
+	left: 25%;
+
+	width: 10px;
+
+	height: 10px;
+
+	background: $smoky-white;
+
+	border: 2px solid $accent-color;
+
+	border-radius: 50%;
+
+	@media screen and (max-width: $md) {
+
+		top: auto;
+
+		bottom: -4px;
+
+	}
+
+	&--fill {
+
+		left: 85%;
+
+	}
+
+	@media screen and (max-width: $md) {
+
 		width: 100%;
+
 	}
-	&:first-child {
-		margin-bottom: 25px;
-	}
+
 }
+
+.redactor__icon {
+
+	width: 44px;
+
+	height: 44px;
+
+	fill: $accent-color;
+
+	@media screen and (max-width: $xl) {
+
+		width: 22px;
+
+		height: 22px;
+
+	}
+
+	@media screen and (max-width: $md) {
+
+		margin-right: 0;
+
+		width: 44px;
+
+		height: 44px;
+
+	}
+
+}
+
+.redactor__line {
+
+	width: 290px;
+
+	height: 2px;
+
+	background: $ebon-clay;
+
+	@media screen and (max-width: $xl) {
+
+		width: 203px;
+
+	}
+
+	@media screen and (max-width: $md) {
+
+		position: absolute;
+
+		bottom: 0;
+
+		left: 0;
+
+		width: 100%;
+
+	}
+
+}
+
+.redactor__tabs-button {
+
+	@media screen and (max-width: $md) {
+
+		position: relative;
+
+		z-index: 10;
+
+	}
+
+	.redactor__icon {
+
+		@media screen and (max-width: $md) {
+
+			fill: black;
+
+			opacity: 0.3;
+
+		}
+
+	}
+
+}
+
+.redactor__tabs-button--active {
+
+	.redactor__icon {
+
+		@media screen and (max-width: $md) {
+
+			fill: $accent-color;
+
+			opacity: 1;
+
+		}
+
+	}
+
+}
+
+.redactor__buttons {
+
+	display: flex;
+
+	justify-content: space-between;
+
+	@media screen and (max-width: $xl) {
+
+		display: block;
+
+	}
+
+}
+
+.redactor__button {
+
+	width: 184px;
+
+	@media screen and (max-width: $xl) {
+
+		width: 100%;
+
+	}
+
+	&:first-child {
+
+		margin-bottom: 25px;
+
+	}
+
+}
+
