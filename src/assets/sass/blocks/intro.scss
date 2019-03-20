@@ -16,4 +16,18 @@
 			max-width: 250px;
 			font-size: 14px;
 		}
+		&--big {
+			max-width: 764px;
+			@media screen and (max-width: $xl) {
+				max-width: 500px;
+			}
+			@media screen and (max-width: $md) {
+				max-width: 280px;
+			}
+		}
+}
+.intro--hide-mobile {
+	@media screen and (max-width: $md) {
+		display: none;
+	}
 }

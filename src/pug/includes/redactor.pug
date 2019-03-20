@@ -5,8 +5,9 @@
 				img(src="assets/i/redactor.jpg", alt="redactor")
 			.redactor__content
 				.redactor__tools
-					.redactor__tabs
-							.redactor__tabs-button.redactor__tabs-button--crop
+					.redactor__tabs#js-redactor-tabs
+						.redactor__tabs-group
+							.redactor__tabs-button.redactor__tabs-button--crop.redactor__tabs-button--active(data-tab="#tab1")
 								svg.redactor__crop-icon.redactor__icon
 									use(xlink:href="#crop2")
 							.redactor__tabs-content.redactor__tabs-content--crop
@@ -14,7 +15,8 @@
 								.redactor__circle.redactor__circle--crop
 							.redactor__tabs-line.redactor__tabs-line--1
 
-							.redactor__tabs-button.redactor__tabs-button--fill
+						.redactor__tabs-group
+							.redactor__tabs-button.redactor__tabs-button--fill(data-tab="#tab2")
 								svg.redactor__fill-icon.redactor__icon
 									use(xlink:href="#fill")
 							.redactor__tabs-content.redactor__tabs-content--fill
@@ -22,7 +24,8 @@
 								.redactor__circle.redactor__circle--fill
 							.redactor__tabs-line.redactor__tabs-line--2
 
-							.redactor__tabs-button.redactor__tabs-button--contrast
+						.redactor__tabs-group
+							.redactor__tabs-button.redactor__tabs-button--contrast(data-tab="#tab3")
 								svg.redactor__contrast-icon.redactor__icon
 									use(xlink:href="#contrast")
 							.redactor__tabs-content.redactor__tabs-content--contrast

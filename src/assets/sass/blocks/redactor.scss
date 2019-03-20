@@ -37,6 +37,7 @@
 	}
 }
 .redactor__tabs {
+<<<<<<< HEAD
 	display: grid;
 	grid-template-columns: 48px 290px;
 	grid-template-rows: repeat(6, auto);
@@ -51,6 +52,27 @@
 	@media screen and (max-width: $xl) {
 		grid-template-columns: 22px 202px;
 		grid-column-gap: 30px;
+=======
+	@media screen and (max-width: $md) {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 36px;
+		padding-bottom: 40px;
+		border-bottom: 1px solid $iron;
+	}
+}
+.redactor__tabs-group {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-bottom: 15px;
+	padding-bottom: 13px;
+	border-bottom: 1px solid $iron;
+	@media screen and (max-width: $md) {
+		display: block;
+		border: none;
+>>>>>>> tab-flex
 	}
 }
 .redactor__tabs-button--crop {
@@ -88,18 +110,29 @@
 .redactor__tabs-content {
 	position: relative;
 	@media screen and (max-width: $md) {
-		display: none;
+		position: absolute;
+		bottom: 40px;
+		left: 0;
+		width: 280px;
+		height: 100%;
+		z-index: 5;
 	}
 }
 .redactor__line {
 	position: absolute;
-	top: 48%;
-	left: 0;
-	width: 290px;
-	height: 2px;
-	background: $ebon-clay;
-	@media screen and (max-width: $xl) {
-		width: 203px;
+	top: -4px;
+	left: 25%;
+	width: 10px;
+	height: 10px;
+	background: $smoky-white;
+	border: 2px solid $accent-color;
+	border-radius: 50%;
+	@media screen and (max-width: $md) {
+		top: auto;
+		bottom: -4px;
+	}
+	&--fill {
+		left: 85%;
 	}
 	@media screen and (max-width: $md) {
 		width: 100%;
@@ -114,24 +147,43 @@
 		height: 22px;
 	}
 	@media screen and (max-width: $md) {
+		margin-right: 0;
 		width: 44px;
 		height: 44px;
 	}
 }
-.redactor__circle {
-	position: absolute;
-	top: 41%;
-	left: 25%;
-	width: 10px;
-	height: 10px;
-	background: $smoky-white;
-	border: 2px solid $accent-color;
-	border-radius: 50%;
-	&--fill {
-		left: 85%;
+.redactor__line {
+	width: 290px;
+	height: 2px;
+	background: $ebon-clay;
+	@media screen and (max-width: $xl) {
+		width: 203px;
 	}
-	&--contrast {
-		left: 55%;
+	@media screen and (max-width: $md) {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
+}
+.redactor__tabs-button {
+	@media screen and (max-width: $md) {
+		position: relative;
+		z-index: 10;
+	}
+	.redactor__icon {
+		@media screen and (max-width: $md) {
+			fill: black;
+			opacity: 0.3;
+		}
+	}
+}
+.redactor__tabs-button--active {
+	.redactor__icon {
+		@media screen and (max-width: $md) {
+			fill: $accent-color;
+			opacity: 1;
+		}
 	}
 }
 .redactor__buttons {
